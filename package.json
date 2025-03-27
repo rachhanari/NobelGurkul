@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/rachhanari/NobelGurkul.git",
+  "homepage": "https://rachhanari.github.io/NobelGurkul",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
