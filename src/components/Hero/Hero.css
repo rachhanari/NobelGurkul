@@ -1,0 +1,76 @@
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* min-height: 100px; */
+    position: relative;
+    align-items: center;
+    animation: bgChange 9s infinite linear;
+}
+.wellcome{
+    font-size: 2.5vw;
+}
+.school{
+    font-size: 2vw;
+}
+
+.education{
+    font-size: 1.5vw;
+}
+
+.content {
+    font-size: 01vw;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    color: #b30000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-container button {
+    width: 100%;
+    background-color: #b30000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #900000;
+}
+
+
+@keyframes bgChange {
+    0%, 100% {
+        background-image: url("../../assets/hero.jpg");
+    }
+    33% {
+        background-image: url("../../assets/hero1.JPG");
+    }
+    66% {
+        background-image: url("../../assets/hero2.JPG"); 
+    }
+}
