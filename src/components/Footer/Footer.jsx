@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between text-sm items-center">
           <p className="text-gray-400 text-center md:text-left">
-            © 2025 Nobel School. All Rights Reserved | Design by{" "}
+            © {new Date().getFullYear()} Nobel Gurukul School & College. All Rights Reserved | Design by{" "}
             <a href="#" className="text-teal-400 hover:text-teal-300 transition-all">Accevate Technologies</a>
           </p>
 

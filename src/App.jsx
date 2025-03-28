@@ -13,42 +13,22 @@ import DiwaliFireworkRain from "./components/ballon&party/DiwaliBurst";
 import TrusterImages from "./components/Turster/TrusterImages";
 
 const SplashScreen = ({ onFinish }) => {
-  useEffect(() => {
-    const audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
-    audio.loop = false;
-    audio.volume = 0;
-    audio.muted = true; // muted initially to pass autoplay restrictions
+  const [audioPlayed, setAudioPlayed] = useState(false);
+  const [audio] = useState(new Audio("/Noble-school/Audio/OM.mp3"));
 
-    audio.play()
-      .then(() => {
-        // Unmute and fade-in volume
-        audio.muted = false;
-        let currentVolume = 0;
-        const fadeInterval = setInterval(() => {
-          if (currentVolume < 1) {
-            currentVolume += 0.05;
-            audio.volume = currentVolume;
-          } else {
-            clearInterval(fadeInterval);
-          }
-        }, 100);
-      })
-      .catch((err) => {
-        console.log("Autoplay might be blocked:", err);
-      });
-
-    const timer = setTimeout(() => {
+  const handleStart = () => {
+    if (!audioPlayed) {
+      audio.play()
+        .then(() => console.log("✅ Audio playing..."))
+        .catch((err) => console.error("🚫 Audio blocked:", err));
+      setAudioPlayed(true);
+    }
+    setTimeout(() => {
       audio.pause();
       audio.currentTime = 0;
       onFinish();
-    }, 4000);
-
-    return () => {
-      clearTimeout(timer);
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, [onFinish]);
+    }, 5000);
+  };
 
   return (
     <AnimatePresence>
@@ -56,7 +36,7 @@ const SplashScreen = ({ onFinish }) => {
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 1.2 } }}
-        className="fixed inset-0 z-[99999] flex items-center justify-center bg-gradient-to-br from-[#1f2937] to-[#111827]"
+        className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-gradient-to-br from-[#1f2937] to-[#111827]"
       >
         <div className="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
 
@@ -87,6 +67,15 @@ const SplashScreen = ({ onFinish }) => {
           >
             Best education for your child's future
           </motion.p>
+          <motion.button
+            onClick={handleStart}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1 } }}
+            whileHover={{ scale: 1.1 }}
+            className="mt-6 px-6 py-3 bg-yellow-500 text-black font-bold rounded-lg shadow-lg"
+          >
+            Click to Play & Visit
+          </motion.button>
         </div>
       </motion.div>
     </AnimatePresence>
