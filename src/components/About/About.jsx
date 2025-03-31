@@ -13,7 +13,7 @@ const experts = [
     description: "At [NOBEL GURUKUL CONVENT SCHOOL & COLLEGE], we nurture young minds with knowledge, creativity, and values to shape future leaders.",
   },
   {
-    name: "Miss. Priyanka D.mohanty",
+    name: "Miss. Priyanka D. Mohanty",
     role: "Principal",
     img: img2,
     description: "As Principal of [NOBEL GURUKUL CONVENT SCHOOL & COLLEGE], I am dedicated to fostering a nurturing and dynamic learning environment for all students..",
@@ -43,7 +43,7 @@ const CombinedPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-300 to-yellow-600 flex flex-col lg:flex-row items-center justify-center p-6 gap-12">
       <div className="relative w-full lg:w-1/2 text-center bg-transparent">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-900 drop-shadow">Our Founder's</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-900 drop-shadow">Meet Our Mangement</h2>
 
         <div className="relative flex justify-center items-center">
           <motion.img

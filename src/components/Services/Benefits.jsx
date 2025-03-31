@@ -11,7 +11,7 @@ const BenefitsData = [
   {
     id: 2,
     title: "Infrastructure",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmMfXqo4hULYl6cswKTNdMiyTLP7BHT_T8A&s",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS31xDj8hjmz5xDqG1xfTNwMcgFavKH6ln_hg&s",
     delay: 0.3,
   },
   {
@@ -23,13 +23,13 @@ const BenefitsData = [
   {
     id: 4,
     title: "Transport Facilities",
-    img: "https://cdn-icons-png.flaticon.com/512/4727/4727479.png",
+    img: "https://cdn-icons-png.flaticon.com/512/2089/2089884.png",
     delay: 0.5,
   },
   {
     id: 5,
     title: "24/7 CCTV Security",
-    img: "https://cdn-icons-png.flaticon.com/512/1048/1048927.png",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnVGXeI8ddQJCI-jYIXmkVf1FhmxmrZOl0Q&s",
     delay: 0.6,
   },
 ];
@@ -47,7 +47,7 @@ const Benefits = () => {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }}
-          className="text-3xl font-bold text-center pb-6 text-gray-800"
+          className="text-4xl font-bold text-center pb-6 text-gray-800"
         >
           Our Benefits
         </motion.h1>
@@ -61,14 +61,14 @@ const Benefits = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-2 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
             >
               <img
                 src={benefit.img}
                 alt={benefit.title}
-                className="w-20 h-20 mb-2 hover:rotate-12 transition-transform duration-300"
+                className="w-32 h-32 mb-3 hover:rotate-12 transition-transform duration-300"
               />
-              <h1 className="text-base font-semibold text-center text-gray-700">
+              <h1 className="text-lg font-semibold text-center text-gray-800">
                 {benefit.title}
               </h1>
             </motion.div>

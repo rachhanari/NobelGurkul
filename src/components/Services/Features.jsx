@@ -5,7 +5,7 @@ const FeaturesData = [
   {
     id: 1,
     title: "Dance",
-    img: "https://cdn-icons-png.flaticon.com/512/5600/5600929.png",
+    img: "https://media.istockphoto.com/id/668190178/vector/bharatanatyam-or-bharathanatiyam-woman-dancer-vector-ilustration-isolated.jpg?s=612x612&w=0&k=20&c=HdANesx3xHmz_yitFvG49pYv8BFHhGdVot9FVaDX3Jk=",
     delay: 0.2,
   },
   {
@@ -29,7 +29,7 @@ const FeaturesData = [
   {
     id: 5,
     title: "Taekwondo",
-    img: "https://cdn-icons-png.flaticon.com/512/5789/5789324.png",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTm47_cMPwJ2URaz-rcr23jrxviFaxxt8_Lg&s",
     delay: 0.6,
   },
 ];
@@ -50,7 +50,7 @@ const Features = () => {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }}
-          className="text-3xl font-bold text-center pb-8 text-gray-800"
+          className="text-4xl font-bold text-center pb-8 text-gray-800"
         >
           Our Activities
         </motion.h1>
@@ -62,14 +62,14 @@ const Features = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-6 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
             >
               <img
                 src={feature.img}
                 alt={feature.title}
-                className="w-20 h-20 mb-2 hover:rotate-12 transition-transform duration-300"
+                className="w-40 h-40 mb-3 hover:rotate-12 transition-transform duration-300"
               />
-              <h1 className="text-base font-semibold text-center text-gray-700">
+              <h1 className="text-lg font-semibold text-center text-gray-800">
                 {feature.title}
               </h1>
             </motion.div>
