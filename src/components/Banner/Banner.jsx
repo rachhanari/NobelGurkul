@@ -27,10 +27,10 @@ const galleryImages = [
 
 // ✅ Correct video paths using BASE_URL
 const videoSources = [
-  { id: 1, src: "/Noble-school/Videos/DSC_0088.MOV" },
-  { id: 2, src: "/Noble-school/Videos/InShot_20250311_202104574.mp4" },
-  { id: 3, src: "/Noble-school/Videos/InShot_20250312_132129600.mp4" },
-  { id: 4, src: "/Noble-school/Videos/InShot_20250312_132129600.mp4" },
+  { id: 1, src: "/NobleGurkul/Videos/DSC_0088.MOV" },
+  { id: 2, src: "/NobleGurkul/Videos/InShot_20250311_202104574.mp4" },
+  { id: 3, src: "/NobleGurkul/Videos/InShot_20250312_132129600.mp4" },
+  { id: 4, src: "/NobleGurkul/Videos/InShot_20250312_132129600.mp4" },
 ];
 
 const Gallery = () => {

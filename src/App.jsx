@@ -13,22 +13,13 @@ import DiwaliFireworkRain from "./components/ballon&party/DiwaliBurst";
 import TrusterImages from "./components/Turster/TrusterImages";
 
 const SplashScreen = ({ onFinish }) => {
-  const [audioPlayed, setAudioPlayed] = useState(false);
-  const [audio] = useState(new Audio("/Noble-school/Audio/OM.mp3"));
-
-  const handleStart = () => {
-    if (!audioPlayed) {
-      audio.play()
-        .then(() => console.log("✅ Audio playing..."))
-        .catch((err) => console.error("🚫 Audio blocked:", err));
-      setAudioPlayed(true);
-    }
-    setTimeout(() => {
-      audio.pause();
-      audio.currentTime = 0;
+  useEffect(() => {
+    const timer = setTimeout(() => {
       onFinish();
     }, 5000);
-  };
+
+    return () => clearTimeout(timer);
+  }, [onFinish]);
 
   return (
     <AnimatePresence>
@@ -67,15 +58,6 @@ const SplashScreen = ({ onFinish }) => {
           >
             Best education for your child's future
           </motion.p>
-          <motion.button
-            onClick={handleStart}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: 1 } }}
-            whileHover={{ scale: 1.1 }}
-            className="mt-6 px-6 py-3 bg-yellow-500 text-black font-bold rounded-lg shadow-lg"
-          >
-            Click to Play & Visit
-          </motion.button>
         </div>
       </motion.div>
     </AnimatePresence>
