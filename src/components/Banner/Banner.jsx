@@ -26,7 +26,7 @@ const galleryImages = [
 // ✅ Vercel-friendly paths (from public/)
 const videoSources = [
   { id: 1, src: "/Videos/DSC_0088.MOV" },
-  { id: 2, src: "/Videos/InShot_20250311_202104574.mp4" },
+  { id: 2, src: "/Videos/DSC_0088.MOV" },
   { id: 3, src: "/Videos/InShot_20250312_132129600.mp4" },
   { id: 4, src: "/Videos/InShot_20250312_132129600.mp4" },
 ];
