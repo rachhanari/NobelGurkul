@@ -92,9 +92,9 @@ const Hero = () => {
             <div className="form-container">
               <h2>Admissions Open for 2025-26</h2>
               <form ref={form} onSubmit={sendEmail}>
-                <input name="name" type="text" placeholder="Student Name" required />
-                <input name="parent" type="text" placeholder="Parent Name" required />
-                <select name="std" required>
+                <input name="name" type="text" placeholder="Student Name*" required />
+                <input name="parent" type="text" placeholder="Parent Name" />
+                <select name="std">
                   <option value="">Current Std</option>
                   <option>Nursery</option>
                   <option>JrKG</option>
@@ -112,9 +112,9 @@ const Hero = () => {
                   <option>Std 11</option>
                   <option>Std 12</option>
                 </select>
-                <input name="mobile" type="tel" placeholder="Mobile No." required />
-                <input name="email" type="email" placeholder="Email ID" required />
-                <input name="city" type="text" placeholder="City" required />
+                <input name="mobile" type="tel" placeholder="Mobile No*." required />
+                <input name="email" type="email" placeholder="Email ID"/>
+                <input name="city" type="text" placeholder="City*" required />
                 <button type="submit">Submit</button>
               </form>
             </div>

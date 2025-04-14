@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Import images
 import img1 from "../../assets/DSC_0128.jpg";
 import img2 from "../../assets/DSC_0216.jpg";
 import img3 from "../../assets/DSC_0229.jpg";
@@ -13,7 +12,6 @@ import img6 from "../../assets/DSC_0358.jpg";
 import img7 from "../../assets/hero.png";
 import img8 from "../../assets/hero.png";
 
-// Gallery images
 const galleryImages = [
   { id: 1, src: img1 },
   { id: 2, src: img2 },
@@ -25,7 +23,6 @@ const galleryImages = [
   { id: 8, src: img8 },
 ];
 
-// ✅ Correct video paths using BASE_URL
 const videoSources = [
   { id: 1, src: "/NobleGurkul/Videos/DSC_0088.MOV" },
   { id: 2, src: "/NobleGurkul/Videos/InShot_20250311_202104574.mp4" },
@@ -50,18 +47,18 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-100 p-4 sm:p-6">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-100 px-4 py-8 sm:px-6 md:px-10">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10">
         Our School Gallery
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Image Gallery */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full lg:w-1/2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-1/2">
           {galleryImages.map((img) => (
             <motion.div
               key={img.id}
-              className="overflow-hidden rounded-2xl shadow-none cursor-pointer bg-transparent"
+              className="overflow-hidden rounded-2xl shadow-none cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
@@ -69,7 +66,7 @@ const Gallery = () => {
                 <img
                   src={img.src}
                   alt={`Gallery Image ${img.id}`}
-                  className="w-full h-44 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-40 sm:h-44 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
                 />
               </Link>
             </motion.div>
@@ -78,8 +75,9 @@ const Gallery = () => {
 
         {/* Video Section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center gap-6">
+          {/* Main Video */}
           {videoError ? (
-            <div className="w-full h-[450px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
+            <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
               ❌ Video not available
             </div>
           ) : (
@@ -88,7 +86,7 @@ const Gallery = () => {
               controls
               autoPlay
               muted
-              className="w-full h-[450px] rounded-3xl shadow-2xl object-cover"
+              className="w-full h-[250px] sm:h-[300px] md:h-[400px] rounded-3xl shadow-2xl object-cover"
               onCanPlay={() => setVideoError(false)}
               onError={() => setVideoError(true)}
             >
@@ -98,41 +96,45 @@ const Gallery = () => {
           )}
 
           {/* Video Controls */}
-          <div className="flex items-center gap-10 w-full">
+          <div className="flex items-center gap-4 sm:gap-6 w-full overflow-x-auto">
             <button
               onClick={handlePrev}
-              className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-xl"
+              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-lg"
             >
-              <ChevronLeft size={28} />
+              <ChevronLeft size={24} />
             </button>
 
             {/* Video Thumbnails */}
-            <div className="flex gap-4 overflow-x-auto w-full px-2 scrollbar-hide">
+            <div className="flex gap-3 sm:gap-4 overflow-x-auto w-full px-2 scrollbar-hide">
               {videoSources.map((video, index) => (
-                <video
+                <div
                   key={index}
-                  src={video.src}
-                  muted
-                  loop
-                  autoPlay
                   onClick={() => {
                     setCurrentVideo(index);
                     setVideoError(false);
                   }}
-                  className={`w-28 h-20 rounded-xl cursor-pointer object-cover border-4 transition-all duration-300 ${
+                  className={`transition-all duration-300 rounded-xl overflow-hidden cursor-pointer border-4 ${
                     currentVideo === index
-                      ? "border-purple-600 scale-110"
-                      : "border-gray-300 hover:scale-105"
+                      ? "border-purple-600 scale-105 w-36 sm:w-40"
+                      : "border-gray-300 hover:scale-105 w-24 sm:w-28"
                   }`}
-                />
+                >
+                  <video
+                    src={video.src}
+                    muted
+                    loop
+                    autoPlay
+                    className="h-20 sm:h-24 object-cover w-full"
+                  />
+                </div>
               ))}
             </div>
 
             <button
               onClick={handleNext}
-              className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-xl"
+              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-lg"
             >
-              <ChevronRight size={28} />
+              <ChevronRight size={24} />
             </button>
           </div>
         </div>

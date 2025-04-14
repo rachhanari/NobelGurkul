@@ -1,52 +1,65 @@
 import React from "react";
 import { motion } from "framer-motion";
+import excellence from "../../assets/akedamy-removebg-preview.png";
+import infracture from "../../assets/infrastuter.jpeg";
+import achiment from "../../assets/achivment.png";
+import transport from "../../assets/transport.png";
+import cctv from "../../assets/camara-removebg-preview.png";
 
 const BenefitsData = [
   {
     id: 1,
     title: "Excellence in Academic",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4pQSLqgd2XTqNtNow8sdcc6JJI66VQ1d5dQ&s",
+    img: excellence,
     delay: 0.2,
   },
   {
     id: 2,
     title: "Infrastructure",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS31xDj8hjmz5xDqG1xfTNwMcgFavKH6ln_hg&s",
+    img: infracture,
     delay: 0.3,
   },
   {
     id: 3,
     title: "Achievement",
-    img: "https://cdn-icons-png.flaticon.com/512/6746/6746962.png",
+    img: achiment,
     delay: 0.4,
   },
   {
     id: 4,
     title: "Transport Facilities",
-    img: "https://cdn-icons-png.flaticon.com/512/2089/2089884.png",
+    img: transport,
     delay: 0.5,
   },
   {
     id: 5,
     title: "24/7 CCTV Security",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnVGXeI8ddQJCI-jYIXmkVf1FhmxmrZOl0Q&s",
+    img: cctv,
     delay: 0.6,
   },
 ];
 
 const SlideLeft = (delay) => ({
   initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0, transition: { duration: 0.4, delay, ease: "easeInOut" } },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, delay, ease: "easeInOut" },
+  },
 });
 
 const Benefits = () => {
   return (
     <section className="bg-white">
-      <div className="container mx-auto pb-12 pt-14 px-12">
+      <div className="container mx-auto pb-12 pt-14 px-8">
         {/* Heading with animation */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" },
+          }}
           className="text-4xl font-bold text-center pb-6 text-gray-800"
         >
           Our Benefits
@@ -63,12 +76,13 @@ const Benefits = () => {
               viewport={{ once: true }}
               className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
             >
+              {/* Image with responsive sizes */}
               <img
                 src={benefit.img}
                 alt={benefit.title}
-                className="w-32 h-32 mb-3 hover:rotate-12 transition-transform duration-300"
+                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain mb-3 hover:rotate-12 transition-transform duration-300"
               />
-              <h1 className="text-lg font-semibold text-center text-gray-800">
+              <h1 className="text-sm sm:text-base md:text-lg font-semibold text-center text-gray-800">
                 {benefit.title}
               </h1>
             </motion.div>

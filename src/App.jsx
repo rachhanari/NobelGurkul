@@ -46,7 +46,7 @@ const SplashScreen = ({ onFinish }) => {
             animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             className="text-white text-3xl md:text-5xl font-bold mb-4"
           >
-            Welcome to
+            WELLCOME TO
             <span className="block text-yellow-400">
               NOBEL GURUKUL CONVENT SCHOOL & JUNIOR COLLEGE
             </span>

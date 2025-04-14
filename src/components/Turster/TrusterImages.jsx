@@ -1,12 +1,12 @@
 import React from "react";
-import img1 from "../../assets/DSC_0128.jpg";
-import img2 from "../../assets/DSC_0216.jpg";
-import img3 from "../../assets/DSC_0229.jpg";
-import img4 from "../../assets/DSC_0238.jpg";
-import img5 from "../../assets/DSC_0268.jpg";
-import img6 from "../../assets/DSC_0358.jpg";
-import img7 from "../../assets/hero.png";
-import img8 from "../../assets/hero.png";
+import img1 from "../../assets/truste-img1.jpg";
+import img2 from "../../assets/truster-img2.jpg";
+import img3 from "../../assets/truster-img3.jpg";
+import img4 from "../../assets/truster-img4.jpg";
+import img5 from "../../assets/truste-img5.jpg";
+import img6 from "../../assets/truste-img6.jpg";
+import img7 from "../../assets/truste-img7.jpg";
+import img8 from "../../assets/truste-img8.jpg";
 
 const TrusterImages = () => {
   const images = [
@@ -16,8 +16,8 @@ const TrusterImages = () => {
     { id: 4, src: img4 },
     { id: 5, src: img5 },
     { id: 6, src: img6 },
-    { id: 7, src: img3 },
-    { id: 8, src: img5 },
+    { id: 7, src: img7 },
+    { id: 8, src: img8 },
   ];
 
   return (
