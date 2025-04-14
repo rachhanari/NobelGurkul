@@ -82,7 +82,7 @@ const Gallery = () => {
             </div>
           ) : (
             <video
-              key={currentVideo}
+              key={currentVideo} // This ensures the video re-renders when the `currentVideo` changes
               controls
               autoPlay
               muted
