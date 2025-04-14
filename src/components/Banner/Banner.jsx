@@ -23,11 +23,12 @@ const galleryImages = [
   { id: 8, src: img8 },
 ];
 
+// ✅ Vercel-friendly paths (from public/)
 const videoSources = [
-  { id: 1, src: "/NobleGurkul/Videos/DSC_0088.MOV" },
-  { id: 2, src: "/NobleGurkul/Videos/InShot_20250311_202104574.mp4" },
-  { id: 3, src: "/NobleGurkul/Videos/InShot_20250312_132129600.mp4" },
-  { id: 4, src: "/NobleGurkul/Videos/InShot_20250312_132129600.mp4" },
+  { id: 1, src: "/Videos/DSC_0088.MOV" },
+  { id: 2, src: "/Videos/InShot_20250311_202104574.mp4" },
+  { id: 3, src: "/Videos/InShot_20250312_132129600.mp4" },
+  { id: 4, src: "/Videos/InShot_20250312_132129600.mp4" },
 ];
 
 const Gallery = () => {
@@ -75,7 +76,6 @@ const Gallery = () => {
 
         {/* Video Section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center gap-6">
-          {/* Main Video */}
           {videoError ? (
             <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
               ❌ Video not available
@@ -104,7 +104,6 @@ const Gallery = () => {
               <ChevronLeft size={24} />
             </button>
 
-            {/* Video Thumbnails */}
             <div className="flex gap-3 sm:gap-4 overflow-x-auto w-full px-2 scrollbar-hide">
               {videoSources.map((video, index) => (
                 <div
