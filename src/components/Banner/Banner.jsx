@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -63,13 +62,11 @@ const Gallery = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <Link to={`/gallery-view/${img.id}`}>
-                <img
-                  src={img.src}
-                  alt={`Gallery Image ${img.id}`}
-                  className="w-full h-52 sm:h-60 object-contain object-center rounded-2xl transition-transform duration-300 hover:scale-105"
-                />
-              </Link>
+              <img
+                src={img.src}
+                alt={`Gallery Image ${img.id}`}
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </motion.div>
           ))}
         </div>
