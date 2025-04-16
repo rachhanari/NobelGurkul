@@ -13,12 +13,12 @@ import img6 from "../../assets/Gallary-img6.jpeg";
 import img7 from "../../assets/Gallary-img7.jpeg";
 import img8 from "../../assets/Gallary-img8.jpeg";
 
-// Videos (placed in public/videos)
+// Videos from public/videos/
 const videoSources = [
-  { id: 1, src: "/Videos/Gallery-vid1.mp4" },
-  { id: 2, src: "/Videos/Gallery-vid2.mp4" },
-  { id: 3, src: "/Videos/Gallery-vid3.mp4" },
-  { id: 4, src: "/Videos/Gallery-vid4.mp4" },
+  { id: 1, src: "/videos/Gallery-vid1.mp4" },
+  { id: 2, src: "/videos/Gallery-vid2.mp4" },
+  { id: 3, src: "/videos/Gallery-vid3.mp4" },
+  { id: 4, src: "/videos/Gallery-vid4.mp4" },
 ];
 
 const galleryImages = [
@@ -126,16 +126,11 @@ const Gallery = () => {
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={video.src}
                     muted
-                    playsInline
                     className="h-16 sm:h-20 object-cover w-full"
                     onMouseEnter={(e) => e.target.play()}
                     onMouseLeave={(e) => {
                       e.target.pause();
                       e.target.currentTime = 0;
-                    }}
-                    onError={(e) => {
-                      e.target.poster = "/fallback-thumbnail.jpg";
-                      e.target.src = "";
                     }}
                   />
                 </div>
