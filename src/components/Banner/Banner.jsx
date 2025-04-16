@@ -30,6 +30,7 @@ const videoSources = [
   { id: 4, src: "/Videos/Gallery-vid4.mp4" },
 ];
 
+
 const Gallery = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [videoError, setVideoError] = useState(false);
@@ -48,7 +49,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-100 px-4 py-8 sm:px-6 md:px-10">
+    <div className="bg-gradient-to-br from-[#6EE7B7] via-[#A78BFA] to-[#9333EA] p-8 sm:p-10 md:p-12">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10">
         Our School Gallery
       </h2>

@@ -21,7 +21,15 @@ const TrusterImages = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div
+      className="p-4"
+      style={{
+        backgroundImage: `linear-gradient(
+          rgba(0, 123, 255, 0.2), 
+          rgba(0, 123, 255, 0.3)
+        )`,
+      }}
+    >
       <h2 className="text-center text-5xl font-extrabold text-black mb-8">
         Our Trustee
       </h2>
