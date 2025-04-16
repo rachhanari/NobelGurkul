@@ -13,11 +13,13 @@ import img6 from "../../assets/Gallary-img6.jpeg";
 import img7 from "../../assets/Gallary-img7.jpeg";
 import img8 from "../../assets/Gallary-img8.jpeg";
 
-// Videos (imported properly)
-import vid1 from "../../assets/Videos/Gallery-vid1.mp4";
-import vid2 from "../../assets/Videos/Gallery-vid2.mp4";
-import vid3 from "../../assets/Videos/Gallery-vid3.mp4";
-import vid4 from "../../assets/Videos/Gallery-vid4.mp4";
+// Videos (placed in public/videos)
+const videoSources = [
+  { id: 1, src: "/Videos/Gallery-vid1.mp4" },
+  { id: 2, src: "/Videos/Gallery-vid2.mp4" },
+  { id: 3, src: "/Videos/Gallery-vid3.mp4" },
+  { id: 4, src: "/Videos/Gallery-vid4.mp4" },
+];
 
 const galleryImages = [
   { id: 1, src: img1 },
@@ -28,13 +30,6 @@ const galleryImages = [
   { id: 6, src: img6 },
   { id: 7, src: img7 },
   { id: 8, src: img8 },
-];
-
-const videoSources = [
-  { id: 1, src: vid1 },
-  { id: 2, src: vid2 },
-  { id: 3, src: vid3 },
-  { id: 4, src: vid4 },
 ];
 
 const Gallery = () => {
@@ -48,9 +43,7 @@ const Gallery = () => {
   };
 
   const handlePrev = () => {
-    setCurrentVideo((prev) =>
-      prev === 0 ? videoSources.length - 1 : prev - 1
-    );
+    setCurrentVideo((prev) => (prev === 0 ? videoSources.length - 1 : prev - 1));
     setVideoError(false);
   };
 
@@ -93,11 +86,15 @@ const Gallery = () => {
               controls
               autoPlay
               muted
+              playsInline
               className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-3xl shadow-2xl object-cover"
               onCanPlay={() => setVideoError(false)}
               onError={() => setVideoError(true)}
             >
-              <source src={videoSources[currentVideo]?.src || ""} type="video/mp4" />
+              <source
+                src={videoSources[currentVideo]?.src || ""}
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           )}
@@ -129,11 +126,16 @@ const Gallery = () => {
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={video.src}
                     muted
+                    playsInline
                     className="h-16 sm:h-20 object-cover w-full"
                     onMouseEnter={(e) => e.target.play()}
                     onMouseLeave={(e) => {
                       e.target.pause();
                       e.target.currentTime = 0;
+                    }}
+                    onError={(e) => {
+                      e.target.poster = "/fallback-thumbnail.jpg";
+                      e.target.src = "";
                     }}
                   />
                 </div>
