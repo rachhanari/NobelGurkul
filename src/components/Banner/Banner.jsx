@@ -54,7 +54,7 @@ const Gallery = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
-        {/* Image Gallery */}
+        {/* ✅ Image Gallery with white background removed */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-3/5">
           {galleryImages.map((img) => (
             <motion.div
@@ -67,7 +67,7 @@ const Gallery = () => {
                 <img
                   src={img.src}
                   alt={`Gallery Image ${img.id}`}
-                  className="w-full h-44 sm:h-48 object-cover object-center rounded-2xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-52 sm:h-60 object-contain object-center rounded-2xl transition-transform duration-300 hover:scale-105"
                 />
               </Link>
             </motion.div>
