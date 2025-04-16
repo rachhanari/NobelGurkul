@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./Gallery.css";
 
-// Images
 import img1 from "../../assets/Gallary-img1.jpeg";
-import img2 from "../../assets/Gallary-img2.jpeg";
+import img2 from "../../assets/Gallary-img9.jpeg";
 import img3 from "../../assets/Gallary-img3.jpeg";
 import img4 from "../../assets/Gallary-img10.jpeg";
 import img5 from "../../assets/Gallary-img5.jpeg";
@@ -12,12 +12,27 @@ import img6 from "../../assets/Gallary-img6.jpeg";
 import img7 from "../../assets/Gallary-img7.jpeg";
 import img8 from "../../assets/Gallary-img8.jpeg";
 
-// Videos from public/videos/
-const videoSources = [
-  { id: 1, src: "/videos/Gallery-vid1.mp4" },
-  { id: 2, src: "/videos/Gallery-vid2.mp4" },
-  { id: 3, src: "/videos/Gallery-vid3.mp4" },
-  { id: 4, src: "/videos/Gallery-vid4.mp4" },
+const videoLinks = [
+  {
+    id: 1,
+    src: "https://www.youtube.com/embed/utcB8R0f5Lg?si=HXyvTXWq6lJFcRSP",
+    thumbnail: "https://img.youtube.com/vi/utcB8R0f5Lg/maxresdefault.jpg",
+  },
+  {
+    id: 2,
+    src: "https://www.youtube.com/embed/0zBWFRjkzdQ?si=79ragb40fL6t343w",
+    thumbnail: "https://img.youtube.com/vi/0zBWFRjkzdQ/maxresdefault.jpg",
+  },
+  {
+    id: 3,
+    src: "https://www.youtube.com/embed/77jVrdaM2Ks?si=FvHKXUUkrnTrGlAi",
+    thumbnail: "https://img.youtube.com/vi/77jVrdaM2Ks/maxresdefault.jpg",
+  },
+  {
+    id: 4,
+    src: "https://www.youtube.com/embed/eX4luQr4e3Q?si=oEbFrCcmTUP3YwkN",
+    thumbnail: "https://img.youtube.com/vi/eX4luQr4e3Q/maxresdefault.jpg",
+  },
 ];
 
 const galleryImages = [
@@ -33,17 +48,13 @@ const galleryImages = [
 
 const Gallery = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
-  const [videoError, setVideoError] = useState(false);
-  const videoRefs = useRef([]);
 
   const handleNext = () => {
-    setCurrentVideo((prev) => (prev + 1) % videoSources.length);
-    setVideoError(false);
+    setCurrentVideo((prev) => (prev + 1) % videoLinks.length);
   };
 
   const handlePrev = () => {
-    setCurrentVideo((prev) => (prev === 0 ? videoSources.length - 1 : prev - 1));
-    setVideoError(false);
+    setCurrentVideo((prev) => (prev === 0 ? videoLinks.length - 1 : prev - 1));
   };
 
   return (
@@ -53,51 +64,35 @@ const Gallery = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
-        {/* Image Gallery */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-3/5">
+        {/* Image Gallery - NO tailwind here */}
+        <div className="gallery-grid lg:w-3/5">
           {galleryImages.map((img) => (
-            <motion.div
-              key={img.id}
-              className="overflow-hidden rounded-2xl shadow-none cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <img
-                src={img.src}
-                alt={`Gallery Image ${img.id}`}
-                className="w-full h-full object-cover rounded-2xl"
-              />
-            </motion.div>
+            <div className="gallery-card" key={img.id}>
+              <img src={img.src} alt={`Gallery Image ${img.id}`} className="gallery-img" />
+            </div>
           ))}
         </div>
 
-        {/* Video Section */}
+        {/* Video Section (unchanged) */}
         <div className="w-full lg:w-2/5 flex flex-col items-center gap-6">
-          {videoError ? (
-            <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
-              ❌ Video not available
-            </div>
-          ) : (
-            <video
-              key={currentVideo}
-              controls
-              autoPlay
-              muted
-              playsInline
-              className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl object-cover"
-              onCanPlay={() => setVideoError(false)}
-              onError={() => setVideoError(true)}
-            >
-              <source
-                src={videoSources[currentVideo]?.src || ""}
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <motion.div
+            key={currentVideo}
+            className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={videoLinks[currentVideo].src}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </motion.div>
 
-          {/* Video Controls */}
-          <div className="flex items-center gap-4 sm:gap-6 w-full overflow-x-auto">
+          <div className="flex items-center gap-4 sm:gap-6 w-full">
             <button
               onClick={handlePrev}
               className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-lg"
@@ -106,29 +101,20 @@ const Gallery = () => {
             </button>
 
             <div className="flex gap-3 sm:gap-4 overflow-x-auto w-full px-2 scrollbar-hide">
-              {videoSources.map((video, index) => (
+              {videoLinks.map((video, index) => (
                 <div
                   key={index}
-                  onClick={() => {
-                    setCurrentVideo(index);
-                    setVideoError(false);
-                  }}
+                  onClick={() => setCurrentVideo(index)}
                   className={`transition-all duration-300 rounded-xl overflow-hidden cursor-pointer border-4 ${
                     currentVideo === index
                       ? "border-purple-600 scale-105 w-28 sm:w-32"
                       : "border-gray-300 hover:scale-105 w-20 sm:w-24"
                   }`}
                 >
-                  <video
-                    ref={(el) => (videoRefs.current[index] = el)}
-                    src={video.src}
-                    muted
+                  <img
+                    src={video.thumbnail}
+                    alt={`Video Thumbnail ${video.id}`}
                     className="h-16 sm:h-20 object-cover w-full"
-                    onMouseEnter={(e) => e.target.play()}
-                    onMouseLeave={(e) => {
-                      e.target.pause();
-                      e.target.currentTime = 0;
-                    }}
                   />
                 </div>
               ))}
