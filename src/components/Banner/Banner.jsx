@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Images
 import img1 from "../../assets/Gallary-img1.jpeg";
 import img2 from "../../assets/Gallary-img2.jpeg";
 import img3 from "../../assets/Gallary-img3.jpeg";
@@ -11,6 +12,12 @@ import img5 from "../../assets/Gallary-img5.jpeg";
 import img6 from "../../assets/Gallary-img6.jpeg";
 import img7 from "../../assets/Gallary-img7.jpeg";
 import img8 from "../../assets/Gallary-img8.jpeg";
+
+// Videos (imported properly)
+import vid1 from "../../../public/Videos/Gallery-vid1.mp4";
+import vid2 from "../../../public/Videos/Gallery-vid2.mp4";
+import vid3 from "../../../public/Videos/Gallery-vid3.mp4";
+import vid4 from "../../../public/Videos/Gallery-vid4.mp4";
 
 const galleryImages = [
   { id: 1, src: img1 },
@@ -24,12 +31,11 @@ const galleryImages = [
 ];
 
 const videoSources = [
-  { id: 1, src: "/Videos/Gallery-vid1.mp4" },
-  { id: 2, src: "/Videos/Gallery-vid2.mp4" },
-  { id: 3, src: "/Videos/Gallery-vid3.mp4" },
-  { id: 4, src: "/Videos/Gallery-vid4.mp4" },
+  { id: 1, src: vid1 },
+  { id: 2, src: vid2 },
+  { id: 3, src: vid3 },
+  { id: 4, src: vid4 },
 ];
-
 
 const Gallery = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -55,7 +61,7 @@ const Gallery = () => {
       </h2>
 
       <div className="flex flex-col lg:flex-row gap-10">
-        {/* ✅ Image Gallery with white background removed */}
+        {/* Image Gallery */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-3/5">
           {galleryImages.map((img) => (
             <motion.div
@@ -91,7 +97,7 @@ const Gallery = () => {
               onCanPlay={() => setVideoError(false)}
               onError={() => setVideoError(true)}
             >
-              <source src={videoSources[currentVideo].src} type="video/mp4" />
+              <source src={videoSources[currentVideo]?.src || ""} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           )}
