@@ -14,10 +14,10 @@ import img7 from "../../assets/Gallary-img7.jpeg";
 import img8 from "../../assets/Gallary-img8.jpeg";
 
 // Videos (imported properly)
-import vid1 from "../../../public/Videos/Gallery-vid1.mp4";
-import vid2 from "../../../public/Videos/Gallery-vid2.mp4";
-import vid3 from "../../../public/Videos/Gallery-vid3.mp4";
-import vid4 from "../../../public/Videos/Gallery-vid4.mp4";
+import vid1 from "../../assets/Videos/Gallery-vid1.mp4";
+import vid2 from "../../assets/Videos/Gallery-vid2.mp4";
+import vid3 from "../../assets/Videos/Gallery-vid3.mp4";
+import vid4 from "../../assets/Videos/Gallery-vid4.mp4";
 
 const galleryImages = [
   { id: 1, src: img1 },
