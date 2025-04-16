@@ -4,7 +4,7 @@ import img2 from "../../assets/truster-img2.jpg";
 import img3 from "../../assets/truster-img3.jpg";
 import img4 from "../../assets/truster-img4.jpg";
 import img5 from "../../assets/truste-img5.jpg";
-import img6 from "../../assets/truste-img6.jpg";
+import img6 from "../../assets/truste8.jpg";
 import img7 from "../../assets/truste-img7.jpg";
 import img8 from "../../assets/truste-img8.jpg";
 

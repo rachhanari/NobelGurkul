@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { IoLogoInstagram } from "react-icons/io";
 import img1 from "../../assets/School-logo.jpeg";
 import pdf1 from "../../assets/Addmision 25-26.pdf";
+import { BsDownload } from "react-icons/bs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,8 +34,9 @@ const Navbar = () => {
         <div className="hidden md:flex flex-wrap items-center gap-6 text-base">
           {/* Admission Button */}
           <a href={pdf1} download>
-            <button className="bg-gray-900 px-4 py-2 rounded text-white text-sm">
+            <button className="bg-gray-900 px-6 py-2 rounded text-white text-sm min-w-[240px] flex items-center justify-between gap-2 whitespace-nowrap">
               Admissions Open 2025-26
+              <BsDownload className="animate-bounce text-lg" />
             </button>
           </a>
 
@@ -92,8 +94,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-red-700 text-white px-6 py-4 flex flex-col gap-4">
           <a href={pdf1} download>
-            <button className="bg-gray-900 px-4 py-2 rounded text-white text-sm w-full">
+            <button className="bg-gray-900 px-6 py-2 rounded text-white text-sm min-w-[240px] flex items-center justify-between gap-2 whitespace-nowrap">
               Admissions Open 2025-26
+              <BsDownload className="animate-bounce text-lg" />
             </button>
           </a>
 

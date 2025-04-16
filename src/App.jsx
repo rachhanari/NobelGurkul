@@ -73,30 +73,14 @@ const App = () => {
         <SplashScreen onFinish={() => setShowSplash(false)} />
       ) : (
         <>
-          <section id="home">
-            <Hero />
-          </section>
-          <section id="courses">
-            <Services />
-          </section>
-          <section id="courses">
-            <Benefits />
-          </section>
-          <section id="courses">
-            <Features />
-          </section>
-          <section id="gallery">
-            <Banner />
-          </section>
-          <section id="joining">
-            <Subscribe />
-          </section>
-          <section id="Truster">
-            <TrusterImages />
-          </section>
-          <section id="contact">
-            <Contact />
-          </section>
+          <Hero />
+          <Services />
+          <Benefits />
+          <Features />
+          <Banner />
+          <Subscribe />
+          <TrusterImages />
+          <Contact />
           <Footer />
         </>
       )}

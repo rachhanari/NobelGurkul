@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import img1 from "../../assets/DSC_0128.jpg";
-import img2 from "../../assets/DSC_0216.jpg";
-import img3 from "../../assets/DSC_0229.jpg";
-import img4 from "../../assets/DSC_0238.jpg";
-import img5 from "../../assets/DSC_0268.jpg";
-import img6 from "../../assets/DSC_0358.jpg";
-import img7 from "../../assets/hero.png";
-import img8 from "../../assets/hero.png";
+import img1 from "../../assets/Gallary-img1.jpeg";
+import img2 from "../../assets/Gallary-img2.jpeg";
+import img3 from "../../assets/Gallary-img3.jpeg";
+import img4 from "../../assets/Gallary-img10.jpeg";
+import img5 from "../../assets/Gallary-img5.jpeg";
+import img6 from "../../assets/Gallary-img6.jpeg";
+import img7 from "../../assets/Gallary-img7.jpeg";
+import img8 from "../../assets/Gallary-img8.jpeg";
 
 const galleryImages = [
   { id: 1, src: img1 },
@@ -23,17 +23,17 @@ const galleryImages = [
   { id: 8, src: img8 },
 ];
 
-// ✅ Vercel-friendly paths (from public/)
 const videoSources = [
-  { id: 1, src: "/Videos/DSC_0088.MOV" },
-  { id: 2, src: "/Videos/DSC_0088.MOV" },
-  { id: 3, src: "/Videos/InShot_20250312_132129600.mp4" },
-  { id: 4, src: "/Videos/InShot_20250312_132129600.mp4" },
+  { id: 1, src: "/Videos/Gallery-vid1.mp4" },
+  { id: 2, src: "/Videos/Gallery-vid2.mp4" },
+  { id: 3, src: "/Videos/Gallery-vid3.mp4" },
+  { id: 4, src: "/Videos/Gallery-vid4.mp4" },
 ];
 
 const Gallery = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [videoError, setVideoError] = useState(false);
+  const videoRefs = useRef([]);
 
   const handleNext = () => {
     setCurrentVideo((prev) => (prev + 1) % videoSources.length);
@@ -55,7 +55,7 @@ const Gallery = () => {
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Image Gallery */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-1/2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full lg:w-3/5">
           {galleryImages.map((img) => (
             <motion.div
               key={img.id}
@@ -67,7 +67,7 @@ const Gallery = () => {
                 <img
                   src={img.src}
                   alt={`Gallery Image ${img.id}`}
-                  className="w-full h-40 sm:h-44 object-cover rounded-2xl transition-transform duration-300 hover:scale-105"
+                  className="w-full h-44 sm:h-48 object-cover object-center rounded-2xl transition-transform duration-300 hover:scale-105"
                 />
               </Link>
             </motion.div>
@@ -75,18 +75,18 @@ const Gallery = () => {
         </div>
 
         {/* Video Section */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center gap-6">
+        <div className="w-full lg:w-2/5 flex flex-col items-center gap-6">
           {videoError ? (
-            <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
+            <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] flex items-center justify-center bg-gray-200 rounded-3xl text-red-600 font-semibold">
               ❌ Video not available
             </div>
           ) : (
             <video
-              key={currentVideo} // This ensures the video re-renders when the `currentVideo` changes
+              key={currentVideo}
               controls
               autoPlay
               muted
-              className="w-full h-[250px] sm:h-[300px] md:h-[400px] rounded-3xl shadow-2xl object-cover"
+              className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-3xl shadow-2xl object-cover"
               onCanPlay={() => setVideoError(false)}
               onError={() => setVideoError(true)}
             >
@@ -114,16 +114,20 @@ const Gallery = () => {
                   }}
                   className={`transition-all duration-300 rounded-xl overflow-hidden cursor-pointer border-4 ${
                     currentVideo === index
-                      ? "border-purple-600 scale-105 w-36 sm:w-40"
-                      : "border-gray-300 hover:scale-105 w-24 sm:w-28"
+                      ? "border-purple-600 scale-105 w-28 sm:w-32"
+                      : "border-gray-300 hover:scale-105 w-20 sm:w-24"
                   }`}
                 >
                   <video
+                    ref={(el) => (videoRefs.current[index] = el)}
                     src={video.src}
                     muted
-                    loop
-                    autoPlay
-                    className="h-20 sm:h-24 object-cover w-full"
+                    className="h-16 sm:h-20 object-cover w-full"
+                    onMouseEnter={(e) => e.target.play()}
+                    onMouseLeave={(e) => {
+                      e.target.pause();
+                      e.target.currentTime = 0;
+                    }}
                   />
                 </div>
               ))}

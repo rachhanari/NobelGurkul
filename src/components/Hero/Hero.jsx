@@ -113,7 +113,7 @@ const Hero = () => {
                   <option>Std 12</option>
                 </select>
                 <input name="mobile" type="tel" placeholder="Mobile No*." required />
-                <input name="email" type="email" placeholder="Email ID"/>
+                <input name="email" type="email" placeholder="Email ID" />
                 <input name="city" type="text" placeholder="City*" required />
                 <button type="submit">Submit</button>
               </form>
@@ -121,10 +121,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-
-      <section id="about">
-        <About />
-      </section>
+      <About />
     </>
   );
 };
