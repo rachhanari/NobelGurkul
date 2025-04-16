@@ -84,7 +84,7 @@ const Gallery = () => {
               autoPlay
               muted
               playsInline
-              className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-3xl shadow-2xl object-cover"
+              className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl object-cover"
               onCanPlay={() => setVideoError(false)}
               onError={() => setVideoError(true)}
             >
