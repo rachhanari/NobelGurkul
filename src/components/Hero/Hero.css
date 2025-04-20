@@ -1,10 +1,10 @@
 .hero-section {
   background-size: cover;
-  background-position: center;
+  background-position: 100% center; /* Start from the right */
   background-repeat: no-repeat;
   position: relative;
   align-items: center;
-  animation: slideBackground 10s infinite linear; /* Updated the animation to slide */
+  animation: slideBackground 10s infinite linear; /* Updated the animation */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,16 +29,16 @@
 
 @media (min-width: 768px) {
   .welcome {
-      font-size: 3vw;
+    font-size: 3vw;
   }
   .school {
-      font-size: 2.5vw;
+    font-size: 2.5vw;
   }
   .education {
-      font-size: 2vw;
+    font-size: 2vw;
   }
   .content {
-      font-size: 1.2vw;
+    font-size: 1.2vw;
   }
 }
 
@@ -54,7 +54,7 @@
 
 @media (max-width: 480px) {
   .form-container {
-      padding: 20px;
+    padding: 20px;
   }
 }
 
@@ -92,17 +92,22 @@
 @keyframes slideBackground {
   0% {
     background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
+    background-position: 100% center;
   }
   25% {
     background-image: url("../../assets/republic.jpg");
+    background-position: 0% center;
   }
   50% {
     background-image: url("../../assets/shivaji_jayanti_celebration.jpg");
+    background-position: 100% center;
   }
   75% {
     background-image: url("../../assets/Marathi_diwas.jpg");
+    background-position: 0% center;
   }
   100% {
     background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
+    background-position: 100% center;
   }
 }
