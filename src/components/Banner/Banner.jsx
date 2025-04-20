@@ -58,13 +58,13 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#6EE7B7] via-[#A78BFA] to-[#9333EA] p-8 sm:p-10 md:p-12">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10">
+    <div className="bg-gradient-to-br from-[#6EE7B7] via-[#A78BFA] to-[#9333EA] p-4 sm:p-8 md:p-12">
+      <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-center text-gray-800 mb-6 sm:mb-10">
         Our School Gallery
       </h2>
 
-      <div className="flex flex-col lg:flex-row gap-10">
-        {/* Image Gallery - NO tailwind here */}
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-10">
+        {/* Image Gallery */}
         <div className="gallery-grid lg:w-3/5">
           {galleryImages.map((img) => (
             <div className="gallery-card" key={img.id}>
@@ -73,12 +73,12 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Video Section (unchanged) */}
-        <div className="w-full lg:w-2/5 flex flex-col items-center gap-6">
+        {/* Video Section */}
+        <div className="w-full lg:w-2/5 flex flex-col items-center gap-4 sm:gap-6">
           <motion.div
             key={currentVideo}
-            className="w-full h-[220px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl"
-            whileHover={{ scale: 1.05 }}
+            className="w-full h-[200px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl"
+            whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <iframe
@@ -89,25 +89,26 @@ const Gallery = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              className="rounded-2xl"
             ></iframe>
           </motion.div>
 
-          <div className="flex items-center gap-4 sm:gap-6 w-full">
+          <div className="flex items-center gap-2 sm:gap-4 w-full justify-center">
             <button
               onClick={handlePrev}
-              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-lg"
+              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-md"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} />
             </button>
 
-            <div className="flex gap-3 sm:gap-4 overflow-x-auto w-full px-2 scrollbar-hide">
+            <div className="flex gap-2 sm:gap-3 overflow-x-auto w-full px-1 scrollbar-hide">
               {videoLinks.map((video, index) => (
                 <div
                   key={index}
                   onClick={() => setCurrentVideo(index)}
                   className={`transition-all duration-300 rounded-xl overflow-hidden cursor-pointer border-4 ${
                     currentVideo === index
-                      ? "border-purple-600 scale-105 w-28 sm:w-32"
+                      ? "border-purple-600 scale-105 w-24 sm:w-28"
                       : "border-gray-300 hover:scale-105 w-20 sm:w-24"
                   }`}
                 >
@@ -122,9 +123,9 @@ const Gallery = () => {
 
             <button
               onClick={handleNext}
-              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-lg"
+              className="min-w-[40px] bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-full shadow-md"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
