@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-import { FaPhoneAlt, FaWhatsapp, FaFacebookF, FaYoutube } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaFacebookF,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoInstagram } from "react-icons/io";
 import img1 from "../../assets/School-logo.jpeg";
@@ -13,18 +18,18 @@ const Navbar = () => {
   return (
     <nav className="w-full shadow-md text-[17px]">
       {/* Top Section */}
-      <div className="bg-red-800 text-white py-4 px-6 flex flex-wrap justify-between items-center">
+      <div className="bg-red-800 text-white py-4 px-4 sm:px-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
         {/* Logo and Name */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 w-full md:w-auto">
           <img src={img1} alt="logo" className="w-16 h-16 object-contain" />
-          <span className="font-bold text-lg sm:text-2xl uppercase leading-tight">
+          <span className="font-bold text-sm sm:text-base md:text-lg lg:text-xl uppercase leading-tight">
             Nobel Gurukul Convent <br /> SCHOOL & JUNIOR COLLEGE
           </span>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-3xl text-white"
+          className="md:hidden text-3xl text-white self-end"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <IoMdClose /> : <IoMdMenu />}
@@ -33,8 +38,8 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-wrap items-center gap-6 text-base">
           {/* Admission Button */}
-          <a href={pdf1} download>
-            <button className="bg-gray-900 px-6 py-2 rounded text-white text-sm min-w-[240px] flex items-center justify-between gap-2 whitespace-nowrap">
+          <a href={pdf1} download className="w-full md:w-auto">
+            <button className="bg-gray-900 px-4 py-2 rounded text-white text-sm w-full md:w-[240px] flex items-center justify-between gap-2 whitespace-nowrap">
               Admissions Open 2025-26
               <BsDownload className="animate-bounce text-lg" />
             </button>
@@ -94,7 +99,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-red-700 text-white px-6 py-4 flex flex-col gap-4">
           <a href={pdf1} download>
-            <button className="bg-gray-900 px-6 py-2 rounded text-white text-sm min-w-[240px] flex items-center justify-between gap-2 whitespace-nowrap">
+            <button className="bg-gray-900 px-6 py-2 rounded text-white text-sm w-full flex items-center justify-between gap-2 whitespace-nowrap">
               Admissions Open 2025-26
               <BsDownload className="animate-bounce text-lg" />
             </button>
