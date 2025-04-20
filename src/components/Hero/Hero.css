@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   position: relative;
   align-items: center;
-  animation: bgChange 30s infinite linear; /* Increased the time to 30s */
+  animation: slideBackground 10s infinite linear; /* Updated the animation to slide */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,32 +89,20 @@
   background-color: #900000;
 }
 
-@keyframes bgChange {
-  0%, 100% {
+@keyframes slideBackground {
+  0% {
     background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
   }
-  11% {
-    background-image: url("../../assets/saraswathi-pooja.jpg"); 
-  }
-  22% {
+  25% {
     background-image: url("../../assets/republic.jpg");
   }
-  33% {
+  50% {
     background-image: url("../../assets/shivaji_jayanti_celebration.jpg");
   }
-  44% {
-    background-image: url("../../assets/sport-day.jpg"); 
-  }
-  55% {
+  75% {
     background-image: url("../../assets/Marathi_diwas.jpg");
   }
-  66% {
-    background-image: url("../../assets/shivratri_special.jpg");
-  }
-  77% {
-    background-image: url("../../assets/science_exb.jpg");
-  }
-  88% {
-    background-image: url("../../assets/treeplantetion.jpg");
+  100% {
+    background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
   }
 }
