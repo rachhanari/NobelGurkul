@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   position: relative;
   align-items: center;
-  animation: slideBackground 10s infinite linear; /* Updated the animation */
+  animation: slideBackground 25s infinite linear; /* Updated the animation */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
