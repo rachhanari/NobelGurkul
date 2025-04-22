@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   position: relative;
   align-items: center;
-  animation: slideBackground 12s infinite;
+  animation: slideBackground 12s infinite ease-in-out;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -103,8 +103,8 @@
 }
 
 @keyframes slideBackground {
-  0% {
-    background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
+  0%, 100% {
+    background-image: url("../../assets/saraswathi-pooja.jpg");
     background-position: center;
   }
   25% {
@@ -117,10 +117,6 @@
   }
   75% {
     background-image: url("../../assets/Marathi_diwas.jpg");
-    background-position: center;
-  }
-  100% {
-    background-image: url("../../assets/Nobel_Gurukul_Convent.jpg");
     background-position: center;
   }
 }

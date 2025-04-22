@@ -26,7 +26,6 @@ const Hero = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Debugging: console check form values
     const data = new FormData(form.current);
     console.log("Form Data:", Object.fromEntries(data.entries()));
 
