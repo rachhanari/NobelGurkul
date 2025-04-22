@@ -74,14 +74,16 @@ const Benefits = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-6 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
             >
-              {/* Image with responsive sizes */}
-              <img
-                src={benefit.img}
-                alt={benefit.title}
-                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain mb-3 hover:rotate-12 transition-transform duration-300"
-              />
+              {/* Image container for uniform sizing */}
+              <div className="w-full h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden">
+                <img
+                  src={benefit.img}
+                  alt={benefit.title}
+                  className="h-full object-contain hover:rotate-12 transition-transform duration-300"
+                />
+              </div>
               <h1 className="text-sm sm:text-base md:text-lg font-semibold text-center text-gray-800">
                 {benefit.title}
               </h1>

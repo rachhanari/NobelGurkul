@@ -65,6 +65,7 @@ const Services = () => {
         >
           Our Courses
         </motion.h1>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
           {ServicesData.map((service) => (
             <motion.div
@@ -73,14 +74,16 @@ const Services = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-white rounded-2xl flex flex-col gap-4 items-center justify-center p-8 hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-2xl cursor-pointer"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-2xl flex flex-col gap-4 items-center justify-center p-6 hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-2xl cursor-pointer"
             >
-              <img
-                src={service.img}
-                alt={service.title}
-                className="w-24 h-24 mb-3 hover:rotate-12 transition-transform duration-300 sm:w-32 sm:h-32 md:w-24 md:h-24"
-              />
-              <h1 className="text-lg font-semibold text-center text-gray-700">
+              <div className="w-full h-24 sm:h-32 md:h-24 flex items-center justify-center overflow-hidden">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="max-h-full w-auto object-contain hover:rotate-12 transition-transform duration-300"
+                />
+              </div>
+              <h1 className="text-sm sm:text-base md:text-lg font-semibold text-center text-gray-700">
                 {service.title}
               </h1>
             </motion.div>

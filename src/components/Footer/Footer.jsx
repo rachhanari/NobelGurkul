@@ -8,7 +8,7 @@ const Footer = () => {
       {/* Animated Background Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-teal-900 via-gray-900 to-black opacity-10"></div>
 
-      <div className="relative container mx-auto px-6 lg:px-20">
+      <div className="relative container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Description */}
           <div>
@@ -62,13 +62,13 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="https://www.facebook.com/search/top?q=nobel%20gurukul%20convent%20school&__stsd__=eyJwcmltYXJ5Ijp7InR5cGUiOiJUWVBFQUhFQURfUEVPUExFX0VOVElUSUVTIn19" target="value" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-blue-600">
+            <a href="https://www.facebook.com/search/top?q=nobel%20gurukul%20convent%20school&__stsd__=eyJwcmltYXJ5Ijp7InR5cGUiOiJUWVBFQUhFQURfUEVPUExFX0VOVElUSUVTIn19" target="_blank" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-blue-600">
               <FaFacebookF className="text-white text-lg" />
             </a>
-            <a href="https://www.youtube.com/@nobelgurukulconventschoola7857" target="value" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-red-600 bg-transparent">
+            <a href="https://www.youtube.com/@nobelgurukulconventschoola7857" target="_blank" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-red-600 bg-transparent">
               <FaYoutube className="text-white text-lg" />
             </a>
-            <a href="https://www.instagram.com/nobel_gurukul_convent_school/?hl=en" target="value" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-pink-500 bg-transparent">
+            <a href="https://www.instagram.com/nobel_gurukul_convent_school/?hl=en" target="_blank" className="p-3 rounded-full transition-all duration-300 transform hover:scale-110 hover:bg-pink-500 bg-transparent">
               <IoLogoInstagram className="text-white text-lg" />
             </a>
           </div>

@@ -49,9 +49,9 @@ const Navbar = () => {
               <FaWhatsapp className="text-white text-xl" /> WhatsApp
             </a>
             <div className="flex gap-2">
-              <a href="https://www.facebook.com" target="_blank" className="p-2 bg-blue-600 rounded-full animate-zoom"><FaFacebookF /></a>
-              <a href="https://www.youtube.com" target="_blank" className="p-2 bg-red-600 rounded-full animate-zoom"><FaYoutube /></a>
-              <a href="https://www.instagram.com" target="_blank" className="p-2 bg-pink-500 rounded-full animate-zoom"><IoLogoInstagram /></a>
+              <a href="https://www.facebook.com/profile.php?id=61575145043916" target="_blank" className="p-2 bg-blue-600 rounded-full animate-zoom"><FaFacebookF /></a>
+              <a href="https://www.youtube.com/@nobelgurukulconventschoola7857" target="_blank" className="p-2 bg-red-600 rounded-full animate-zoom"><FaYoutube /></a>
+              <a href="https://www.instagram.com/nobel_gurukul_convent_school/?hl=en" target="_blank" className="p-2 bg-pink-500 rounded-full animate-zoom"><IoLogoInstagram /></a>
             </div>
           </div>
         </div>

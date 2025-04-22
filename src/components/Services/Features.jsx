@@ -59,6 +59,7 @@ const Features = () => {
         >
           Our Activities
         </motion.h1>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {FeaturesData.map((feature) => (
             <motion.div
@@ -67,15 +68,17 @@ const Features = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-8 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+              className="bg-gradient-to-br from-gray-100 to-white rounded-xl flex flex-col gap-3 items-center justify-center p-6 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
             >
-              {/* Image */}
-              <img
-                src={feature.img}
-                alt={feature.title}
-                className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-3 hover:rotate-12 transition-transform duration-300"
-              />
-              <h1 className="text-lg font-semibold text-center text-gray-800">
+              {/* Uniform Image Container */}
+              <div className="w-full h-24 sm:h-32 md:h-40 flex items-center justify-center overflow-hidden">
+                <img
+                  src={feature.img}
+                  alt={feature.title}
+                  className="h-full object-contain hover:rotate-12 transition-transform duration-300"
+                />
+              </div>
+              <h1 className="text-sm sm:text-base md:text-lg font-semibold text-center text-gray-800">
                 {feature.title}
               </h1>
             </motion.div>
