@@ -14,9 +14,9 @@ const experts = [
   },
   {
     name: "Miss. Priyanka D. Mohanty",
-    role: "Principal",
+    role: "Managing Trustee",
     img: img2,
-    description: "As Principal of [NOBEL GURUKUL CONVENT SCHOOL & COLLEGE], I am dedicated to fostering a nurturing and dynamic learning environment for all students..",
+    description: "As Principal of [NOBEL GURUKUL CONVENT SCHOOL & COLLEGE], I am dedicated to fostering a nurturing and dynamic learning environment for all students.",
   },
   {
     name: "Mr. Biswajeet D. Mohanty",
@@ -41,9 +41,11 @@ const CombinedPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-300 to-yellow-600 flex flex-col lg:flex-row items-center justify-center p-6 gap-12">
+    <div className="min-h-screen bg-[#ffff00] flex flex-col lg:flex-row items-center justify-center p-6 gap-12">
+      
+      {/* Left Side - Management */}
       <div className="relative w-full lg:w-1/2 text-center bg-transparent">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-900 drop-shadow">Meet Our Mangement</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-900 drop-shadow">Meet Our Management</h2>
 
         <div className="relative flex justify-center items-center">
           <motion.img
@@ -95,6 +97,7 @@ const CombinedPage = () => {
         </div>
       </div>
 
+      {/* Right Side - About Us */}
       <motion.div
         className="w-full lg:w-1/2 flex flex-col items-center"
         initial={{ opacity: 0 }}
@@ -110,41 +113,44 @@ const CombinedPage = () => {
           >
             About Us
           </motion.h2>
+
           <motion.h3
-            className="text-2xl sm:text-3xl font-extrabold mt-3 text-blue-900 drop-shadow"
+            className="text-2xl sm:text-3xl font-extrabold mt-3 text-blue-900"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
           >
             Nobel Gurukul Convent School & Jr College
           </motion.h3>
+
           <p className="mt-4 text-base sm:text-lg text-gray-800 leading-relaxed">
             Where excellence meets innovation! We provide a dynamic learning environment that nurtures academic growth, creativity, and leadership.
           </p>
 
           <div className="mt-6 space-y-6">
-            {[{
+            {[
+              {
                 icon: <FaBookOpen className="text-3xl text-yellow-500" />,
                 title: "Shaping Bright Futures",
                 text: "Empowering students with knowledge, values, and confidence to succeed in an ever-evolving world.",
-                hoverGradient: "hover:from-yellow-400 hover:via-orange-300 hover:to-pink-400",
+                hoverGradient: "from-yellow-400 via-orange-300 to-pink-400",
               },
               {
                 icon: <FaTrophy className="text-3xl text-green-500" />,
                 title: "Excellence Beyond Academics",
                 text: "We focus on holistic development, blending academics with creativity, leadership, and life skills.",
-                hoverGradient: "hover:from-green-400 hover:via-blue-300 hover:to-purple-400",
+                hoverGradient: "from-green-400 via-blue-300 to-purple-400",
               },
               {
                 icon: <FaChalkboardTeacher className="text-3xl text-blue-500" />,
                 title: "Learn with Experts",
                 text: "Gain knowledge from experienced educators who inspire, guide, and nurture every student’s potential.",
-                hoverGradient: "hover:from-purple-500 hover:via-pink-400 hover:to-yellow-400",
+                hoverGradient: "from-purple-500 via-pink-400 to-yellow-400",
               },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className={`flex items-center p-4 bg-white/30 backdrop-blur-xl rounded-xl shadow-md gap-4 text-center sm:text-left transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r ${item.hoverGradient} cursor-pointer`}
+                className={`flex items-center p-4 rounded-xl shadow-md gap-4 text-center sm:text-left transition-all duration-300 hover:scale-105 bg-gradient-to-r ${item.hoverGradient} cursor-pointer`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.2, ease: "easeInOut" }}
@@ -159,6 +165,7 @@ const CombinedPage = () => {
           </div>
         </div>
       </motion.div>
+
     </div>
   );
 };

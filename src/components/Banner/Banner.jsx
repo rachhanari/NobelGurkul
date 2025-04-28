@@ -3,34 +3,34 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./Gallery.css";
 
-import img1 from "../../assets/Gallary-img1.jpeg";
-import img2 from "../../assets/Gallary-img9.jpeg";
-import img3 from "../../assets/Gallary-img3.jpeg";
-import img4 from "../../assets/Gallary-img10.jpeg";
-import img5 from "../../assets/Gallary-img5.jpeg";
-import img6 from "../../assets/Gallary-img6.jpeg";
-import img7 from "../../assets/Gallary-img7.jpeg";
-import img8 from "../../assets/Gallary-img8.jpeg";
+import img1 from "../../assets/Gallary-img1.png";
+import img2 from "../../assets/Gallary-img2.png";
+import img7 from "../../assets/Gallary-img3.png";
+import img4 from "../../assets/Gallary-img4.png";
+import img5 from "../../assets/Gallary-img4.png";
+import img6 from "../../assets/Gallary-img6.png";
+import img3 from "../../assets/Gallary-img7.png";
+import img8 from "../../assets/Gallary-img8.png";
 
 const videoLinks = [
   {
     id: 1,
-    src: "https://www.youtube.com/embed/utcB8R0f5Lg?si=HXyvTXWq6lJFcRSP",
-    thumbnail: "https://img.youtube.com/vi/utcB8R0f5Lg/maxresdefault.jpg",
+    src: "https://www.youtube.com/embed/HKAVUBR1MR4",
+    thumbnail: "https://img.youtube.com/vi/HKAVUBR1MR4/maxresdefault.jpg",
   },
   {
     id: 2,
-    src: "https://www.youtube.com/embed/0zBWFRjkzdQ?si=79ragb40fL6t343w",
-    thumbnail: "https://img.youtube.com/vi/0zBWFRjkzdQ/maxresdefault.jpg",
+    src: "https://www.youtube.com/embed/CoaSS4_t_Ug",
+    thumbnail: "https://img.youtube.com/vi/CoaSS4_t_Ug/maxresdefault.jpg",
   },
   {
     id: 3,
-    src: "https://www.youtube.com/embed/77jVrdaM2Ks?si=FvHKXUUkrnTrGlAi",
-    thumbnail: "https://img.youtube.com/vi/77jVrdaM2Ks/maxresdefault.jpg",
+    src: "https://www.youtube.com/embed/-UbWHIXODPw",
+    thumbnail: "https://img.youtube.com/vi/-UbWHIXODPw/maxresdefault.jpg",
   },
   {
     id: 4,
-    src: "https://www.youtube.com/embed/eX4luQr4e3Q?si=oEbFrCcmTUP3YwkN",
+    src: "https://www.youtube.com/embed/eX4luQr4e3Q",
     thumbnail: "https://img.youtube.com/vi/eX4luQr4e3Q/maxresdefault.jpg",
   },
 ];
@@ -77,7 +77,7 @@ const Gallery = () => {
         <div className="w-full lg:w-2/5 flex flex-col items-center gap-4 sm:gap-6">
           <motion.div
             key={currentVideo}
-            className="w-full h-[200px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl"
+            className="w-full h-[200px] sm:h-[260px] md:h-[320px] rounded-2xl shadow-2xl overflow-hidden"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >

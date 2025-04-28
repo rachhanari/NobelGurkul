@@ -64,26 +64,33 @@ const Hero = () => {
                 variants={fadeUp(0.6)}
                 initial="initial"
                 animate="animate"
-                className="welcome block text-yellow-400"
+                className="welcome-convent block text-[#FFFF00]"
               >
                 WELCOME TO NOBEL GURUKUL CONVENT
               </motion.span>
+
               <motion.span
                 variants={fadeUp(0.8)}
                 initial="initial"
                 animate="animate"
-                className="school block text-yellow-400"
+                className="school block text-[#FFFF00]"
               >
                 SCHOOL & JUNIOR COLLEGE
               </motion.span>
-              <motion.span
+
+              <motion.div
                 variants={fadeUp(1)}
                 initial="initial"
                 animate="animate"
-                className="education block mt-4 font-poppins"
+                className="education block mt-6 font-poppins text-white"
               >
-                Best Education For Your Child
-              </motion.span>
+                <p className="text-lg md:text-xl">
+                  A Bright Future, Cultivated by the Wise Hands of the Gurukul.
+                </p>
+                <p className="mt-2 text-base md:text-lg font-semibold">
+                  दीक्षित जीवन, सुरक्षित भविष्य
+                </p>
+              </motion.div>
             </motion.h1>
           </div>
 

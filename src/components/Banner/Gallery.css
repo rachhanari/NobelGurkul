@@ -20,18 +20,23 @@
 .gallery-card {
   overflow: hidden;
   cursor: pointer;
+  border: 6px solid white; /* thick white border */
+  border-radius: 1.2rem;
+  aspect-ratio: 1 / 1; /* MAKE the card square shape */
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  background: white; /* prevent border artifacts */
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 
 .gallery-img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
   border-radius: 1rem;
-  transition: transform 0.3s ease-in-out;
-}
-
-.gallery-img:hover {
-  transform: scale(1.05);
 }
 
 /* Optional - Hide scrollbar */

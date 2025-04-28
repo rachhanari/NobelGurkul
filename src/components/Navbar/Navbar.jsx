@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full shadow-md text-[17px]">
-      <div className="bg-red-800 text-white px-4 sm:px-6 py-3">
+      <div className="bg-[#0db196] text-white px-4 sm:px-6 py-3">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
           {/* Logo and Name */}
           <div className="flex items-center gap-3 flex-shrink-0">
@@ -60,7 +60,6 @@ const Navbar = () => {
         {isOpen && (
           <div className="mt-4 md:hidden overflow-x-auto">
             <div className="flex items-center gap-3 whitespace-nowrap min-w-fit text-[clamp(10px,3vw,15px)] px-1">
-
               <a href={pdf1} download className="bg-black px-3 py-2 rounded text-white flex items-center gap-1 shrink-0">
                 Admissions 2025-26 <BsDownload className="text-sm animate-bounce" />
               </a>

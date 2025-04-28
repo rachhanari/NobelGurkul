@@ -17,43 +17,55 @@
   object-fit: contain;
 }
 
-.welcome {
-  font-size: 6vw;
+/* FONT Sizes for Main Headings */
+.welcome-convent {
+  font-size: 2vw;
+  font-weight: 700;
+}
+
+.convent {
+  font-size: 1vw;
+  font-weight: 600;
 }
 
 .school {
-  font-size: 5vw;
+  font-size: 2vw; /* Reduced */
+  font-weight: 600;
 }
 
+/* Education Content */
 .education {
-  font-size: 4vw;
+  font-size: 1.5vw;
+  margin-top: 1rem;
 }
 
-.content {
-  font-size: 3vw;
+.education p {
+  margin: 0;
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
   .welcome {
+    font-size: 3.5vw;
+  }
+  .convent {
     font-size: 3vw;
   }
   .school {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
   }
   .education {
-    font-size: 2vw;
-  }
-  .content {
     font-size: 1.2vw;
   }
 }
 
+/* FORM Styling */
 .form-container {
   background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 20px;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   max-width: 400px;
   margin-left: 22vw;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -102,13 +114,14 @@
   cursor: not-allowed;
 }
 
+/* Background Sliding Animation */
 @keyframes slideBackground {
   0%, 100% {
     background-image: url("../../assets/saraswathi-pooja.jpg");
     background-position: center;
   }
   25% {
-    background-image: url("../../assets/republic.jpg");
+    background-image: url("../../assets/shivaji_jayanti_celebration.jpg");
     background-position: center;
   }
   50% {

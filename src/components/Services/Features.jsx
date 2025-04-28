@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import dance from "../../assets/dance-removebg-preview.png";
 import yoga from "../../assets/yoga-removebg-preview.png";
-import karate from "../../assets/karate-removebg-preview.png";
-import boxing from "../../assets/boxing-removebg-preview.png";
-import taekwondo from "../../assets/Taekwondo-removebg-preview.png";
+import karate from "../../assets/karate-removebg-preview (1).png";
+import boxing from "../../assets/Boxin-img-removebg-preview.png";
+import taekwondo from "../../assets/Taekwondo-removebg-preview (1).png";
 
 const FeaturesData = [
   {
