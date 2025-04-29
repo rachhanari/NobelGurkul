@@ -7,7 +7,7 @@ import img1 from "../../assets/Gallary-img1.png";
 import img2 from "../../assets/Gallary-img2.png";
 import img7 from "../../assets/Gallary-img3.png";
 import img4 from "../../assets/Gallary-img4.png";
-import img5 from "../../assets/Gallary-img4.png";
+import img5 from "../../assets/Gallary-img5.jpeg";
 import img6 from "../../assets/Gallary-img6.png";
 import img3 from "../../assets/Gallary-img7.png";
 import img8 from "../../assets/Gallary-img8.png";
@@ -72,8 +72,7 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-
-        {/* Video Section */}
+        
         <div className="w-full lg:w-2/5 flex flex-col items-center gap-4 sm:gap-6">
           <motion.div
             key={currentVideo}
