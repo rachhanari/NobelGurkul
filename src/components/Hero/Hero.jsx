@@ -96,7 +96,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center">
             <div className="form-container">
-              <h2>Admissions Open for 2025-26</h2>
+              <h2>Admissions Open for 2026-27</h2>
               <form ref={form} onSubmit={sendEmail}>
                 <input name="name" type="text" placeholder="Student Name*" required />
                 <input name="parent" type="text" placeholder="Parent Name" />

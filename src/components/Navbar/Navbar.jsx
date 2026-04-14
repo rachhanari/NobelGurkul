@@ -49,7 +49,7 @@ const Navbar = () => {
               download
               className="bg-black px-4 py-2 rounded text-white flex items-center gap-2"
             >
-              Admissions 2025-26 <BsDownload className="animate-bounce" />
+              Admissions 2026-27 <BsDownload className="animate-bounce" />
             </a>
             <a href="tel:+919892538534" className="flex items-center gap-2">
               <FaPhoneAlt /> +91 9892538534
@@ -102,7 +102,7 @@ const Navbar = () => {
               download
               className="bg-black px-4 py-2 rounded text-white flex items-center gap-2"
             >
-              Admissions 2025-26 <BsDownload className="animate-bounce" />
+              Admissions 2026-27 <BsDownload className="animate-bounce" />
             </a>
             <a href="tel:+919892538534" className="flex items-center gap-2">
               <FaPhoneAlt /> +91 9892538534
