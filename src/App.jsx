@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "./components/Navbar/Navbar"; // ✅ ADD THIS
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import Banner from "./components/Banner/Banner";
@@ -27,10 +28,8 @@ const SplashScreen = ({ onFinish }) => {
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, transition: { duration: 1.2 } }}
-        className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-gradient-to-br from-[#1f2937] to-[#111827]"
+        className="fixed inset-0 z-[99999] flex items-center justify-center bg-black"
       >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
-
         <img
           src="https://t4.ftcdn.net/jpg/09/24/14/05/360_F_924140594_YUjBubwd7VKcLTJgouLGGDoGoKUCxzUX.jpg"
           alt="Splash"
@@ -41,23 +40,16 @@ const SplashScreen = ({ onFinish }) => {
         <DiwaliFireworkRain />
 
         <div className="relative text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-            className="text-white text-3xl md:text-5xl font-bold mb-4"
-          >
-            WELLCOME TO
+          <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
+            WELCOME TO
             <span className="block text-yellow-400">
               NOBEL GURUKUL CONVENT SCHOOL & JUNIOR COLLEGE
             </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.4 } }}
-            className="text-white text-lg md:text-2xl opacity-90"
-          >
+          </h1>
+
+          <p className="text-white text-lg md:text-2xl opacity-90">
             Best education for your child's future
-          </motion.p>
+          </p>
         </div>
       </motion.div>
     </AnimatePresence>
@@ -68,12 +60,18 @@ const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 
   return (
-    <main className="overflow-x-hidden bg-white text-dark">
+    <main className="overflow-x-hidden bg-white text-dark m-0 p-0">
+
       {showSplash ? (
         <SplashScreen onFinish={() => setShowSplash(false)} />
       ) : (
         <>
+          {/* ✅ NAVBAR TOP */}
+          <Navbar />
+
+          {/* ✅ HERO BELOW */}
           <Hero />
+
           <Services />
           <Benefits />
           <Features />
