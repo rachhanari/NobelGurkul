@@ -61,7 +61,7 @@ const Contact = () => {
             </div>
             <div className="box">
               <h4>📧 EMAIL:</h4>
-              <p>info@nobelgurukulschool.org</p>
+              <p>nobelgurukulschool.com@gmail.com</p>
             </div>
             <div className="box">
               <h4>📞 PHONE:</h4>

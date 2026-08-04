@@ -9,6 +9,7 @@ import {
 import { MdEmail } from "react-icons/md";
 import { IoLogoInstagram } from "react-icons/io";
 import { BsDownload } from "react-icons/bs";
+
 import img1 from "../../assets/School-logo.jpeg";
 import pdf1 from "../../assets/Addmision 26-27.pdf";
 
@@ -16,121 +17,205 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#0db196] text-white sticky top-0 z-50">
+    <nav className="w-full bg-[#10b39a] sticky top-0 z-50">
 
-      <div className="flex justify-between items-center px-6 lg:px-10 py-4">
+      <div className="flex items-center justify-between px-5 lg:px-8 py-3">
 
-        {/* LEFT */}
+        {/* ================= LEFT ================= */}
+
         <div className="flex items-center gap-4">
+
           <img
             src={img1}
-            alt="logo"
-            className="w-12 h-12 lg:w-16 lg:h-16 object-contain"
+            alt="School Logo"
+            className="w-16 h-16 lg:w-20 lg:h-20 object-contain flex-shrink-0"
           />
-          <h1 className="font-bold text-sm lg:text-lg xl:text-xl">
+
+          <h1 className="font-bold text-white text-[15px] lg:text-[17px] xl:text-[18px] whitespace-nowrap">
             Nobel Gurukul Convent School & Junior College
           </h1>
+
         </div>
 
-        {/* MOBILE MENU BUTTON */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-3xl">
-            {isOpen ? <IoMdClose /> : <IoMdMenu />}
-          </button>
-        </div>
+        {/* ================= MOBILE BUTTON ================= */}
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-6">
+        <button
+          className="lg:hidden text-white text-3xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <IoMdClose /> : <IoMdMenu />}
+        </button>
+
+        {/* ================= DESKTOP ================= */}
+
+        <div className="hidden lg:flex items-center gap-4">
 
           {/* Admission */}
+
           <a
             href={pdf1}
             download
-            className="bg-black px-4 py-2 rounded flex items-center gap-2"
+            className="bg-black text-white px-5 py-3 rounded-lg flex items-center gap-2 text-[15px] font-medium whitespace-nowrap hover:bg-gray-900 duration-300"
           >
-            Admissions 2026-27 <BsDownload />
+            Admissions 2026-27
+            <BsDownload />
           </a>
 
           {/* Phone */}
-          <a href="tel:+919892538534" className="flex items-center gap-2">
-            <FaPhoneAlt /> +91 9892538534
+
+          <a
+            href="tel:+919892538534"
+            className="flex items-center gap-2 text-white text-[15px] whitespace-nowrap hover:text-yellow-300 duration-300"
+          >
+            <FaPhoneAlt />
+            +91 9892538534
           </a>
 
           {/* Email */}
-          <a href="mailto:info@nobelgurukul.edu.in" className="flex items-center gap-2">
-            <MdEmail /> info@nobelgurukul.edu.in
+
+          <a
+            href="mailto:nobelgurukulschool.com@gmail.com"
+            className="flex items-center gap-2 text-white text-[14px] whitespace-nowrap hover:text-yellow-300 duration-300"
+          >
+            <MdEmail />
+            nobelgurukulschool.com@gmail.com
           </a>
 
           {/* WhatsApp */}
+
           <a
             href="https://wa.me/919892538534"
-            className="flex items-center gap-2 bg-green-600 px-3 py-2 rounded-full"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-green-600 hover:bg-green-700 px-5 py-3 rounded-full flex items-center gap-2 text-[15px] font-medium whitespace-nowrap duration-300"
           >
-            <FaWhatsapp /> WhatsApp
+            <FaWhatsapp />
+            WhatsApp
           </a>
 
-          {/* SOCIAL ICONS (FIXED ✅) */}
-          <div className="flex gap-3">
+          {/* Facebook */}
 
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="w-9 h-9 flex items-center justify-center bg-blue-600 rounded-full text-white text-lg"
-            >
-              <FaFacebookF />
-            </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center hover:scale-110 duration-300"
+          >
+            <FaFacebookF />
+          </a>
 
-            <a
-              href="https://www.youtube.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="w-9 h-9 flex items-center justify-center bg-red-600 rounded-full text-white text-lg"
-            >
-              <FaYoutube />
-            </a>
+          {/* YouTube */}
 
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="w-9 h-9 flex items-center justify-center bg-pink-500 rounded-full text-white text-lg"
-            >
-              <IoLogoInstagram />
-            </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center hover:scale-110 duration-300"
+          >
+            <FaYoutube />
+          </a>
 
-          </div>
+          {/* Instagram */}
+
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center hover:scale-110 duration-300"
+          >
+            <IoLogoInstagram />
+          </a>
+
         </div>
+
       </div>
+            {/* ================= MOBILE MENU ================= */}
 
-      {/* MOBILE MENU */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-4">
+        <div className="lg:hidden bg-[#10b39a] border-t border-white/20 px-5 py-5">
 
-          <a href={pdf1} download className="bg-black px-4 py-2 rounded">
-            Admissions 2026-27
-          </a>
+          <div className="flex flex-col gap-4">
 
-          <a href="tel:+919892538534">
-            <FaPhoneAlt /> +91 9892538534
-          </a>
+            {/* Admission */}
 
-          <a href="mailto:info@nobelgurukul.edu.in">
-            <MdEmail /> info@nobelgurukul.edu.in
-          </a>
+            <a
+              href={pdf1}
+              download
+              className="bg-black text-white py-3 rounded-lg text-center font-semibold"
+            >
+              Admissions 2026-27
+            </a>
 
-          <a href="https://wa.me/919892538534">
-            <FaWhatsapp /> WhatsApp
-          </a>
+            {/* Phone */}
 
-          <div className="flex gap-3">
-            <FaFacebookF className="text-xl" />
-            <FaYoutube className="text-xl" />
-            <IoLogoInstagram className="text-xl" />
+            <a
+              href="tel:+919892538534"
+              className="flex items-center gap-3 text-white"
+            >
+              <FaPhoneAlt />
+              +91 9892538534
+            </a>
+
+            {/* Gmail */}
+
+            <a
+              href="mailto:nobelgurukulschool.com@gmail.com"
+              className="flex items-center gap-3 text-white break-all"
+            >
+              <MdEmail />
+              nobelgurukulschool.com@gmail.com
+            </a>
+
+            {/* WhatsApp */}
+
+            <a
+              href="https://wa.me/919892538534"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 text-white"
+            >
+              <FaWhatsapp />
+              WhatsApp
+            </a>
+
+            {/* Social Icons */}
+
+            <div className="flex items-center gap-3 pt-2">
+
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center"
+              >
+                <FaYoutube />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center"
+              >
+                <IoLogoInstagram />
+              </a>
+
+            </div>
+
           </div>
 
         </div>
       )}
+
     </nav>
   );
 };
